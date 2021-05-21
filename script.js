@@ -15,8 +15,8 @@ const GAME_STATUSES = {
     LOSE: 'lose',
 }
 
-const BOARD_SIZE = 10
-const NUMBER_OF_MINES = 5
+const BOARD_SIZE = 15
+const NUMBER_OF_MINES = 35
 
 const subTextElement = document.querySelector('.subtext')
 
@@ -67,7 +67,8 @@ function checkGameEnd() {
         subTextElement.textContent = 'You Win'
     }
 
-    if (lose) {board.forEach(row => {
+    if (lose) {
+        board.forEach(row => {
             row.filter(tile => {
                 if (tile.mine) tile.status = TILE_STATUSES.MINE
             })

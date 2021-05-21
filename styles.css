@@ -39,7 +39,7 @@ body {
     padding: 10px;
     grid-template-columns: repeat(var(--size), 60px);
     grid-template-rows: repeat(var(--size), 60px);
-    gap: 4px;
+    gap: none;
     background-color: #777;
 }
 
@@ -49,13 +49,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    border: 2px solid #BBB;
+    border: 1px solid gray;
     user-select: none;
 }
 
 .board > [data-status="hidden"] {
-    background-color: #BBB;
+    background-color: #A2D149;
     cursor: pointer;
 }
 
@@ -64,7 +63,7 @@ body {
 }
 
 .board > [data-status="number"] {
-    background-color: none;
+    background-color: #E5C29F;
 }
 
 .board > [data-status="marked"] {

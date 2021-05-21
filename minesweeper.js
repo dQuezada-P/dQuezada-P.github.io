@@ -55,12 +55,29 @@ export function showTile(board, tile) {
 
     tile.status = TILE_STATUSES.NUMBER
     const adjacentTiles = nearbyTiles(board, tile)
-    const adjacentMines = adjacentTiles.filter(t => t.mine)
+    const adjacentMines = adjacentTiles.filter(t => t.mine).length
 
-    if (adjacentMines.length == 0) {
+    if (adjacentMines == 0) {
         adjacentTiles.forEach(showTile.bind(null, board))
     } else {
-        tile.element.textContent = adjacentMines.length
+        tile.element.textContent = adjacentMines
+        switch (adjacentMines) {
+            case 1: 
+                tile.element.style.color = 'blue'
+                break
+            case 2:
+                tile.element.style.color = 'green'
+                break
+            case 3:
+                tile.element.style.color = 'red'
+                break
+            case 4:
+                tile.element.style.color = 'purple'
+                break
+            default:
+                tile.element.style.color = 'yellow'
+                break
+        }
     }
 
 }
